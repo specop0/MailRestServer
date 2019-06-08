@@ -1,5 +1,6 @@
 package main;
 
+import java.io.IOException;
 import models.File;
 import models.MailService;
 import routes.Routes;
@@ -7,7 +8,7 @@ import org.json.JSONObject;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         if (args.length > 0) {
             JSONObject configuration = new JSONObject(File.ReadAllText(args[0]));
 
@@ -25,6 +26,10 @@ public class Main {
 
             Routes.EstablishRoutes(mailService, serverPort);
             System.out.println(String.format("Endpoint listening at: localhost:%d", serverPort));
+
+            System.in.read();
+            spark.Spark.stop();
+            spark.Spark.awaitStop();
         } else {
             throw new IllegalArgumentException("No configuration file provided");
         }
