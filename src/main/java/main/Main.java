@@ -27,8 +27,6 @@ public class Main {
             Routes.EstablishRoutes(mailService, serverPort);
             System.out.println(String.format("Endpoint listening at: localhost:%d", serverPort));
 
-            System.in.read();
-            spark.Spark.stop();
             spark.Spark.awaitStop();
         } else {
             throw new IllegalArgumentException("No configuration file provided");
