@@ -1,2 +1,6 @@
 target/
 *.json
+
+.settings
+.project
+.classpath
