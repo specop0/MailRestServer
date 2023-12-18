@@ -1,6 +1,5 @@
-target/
-*.json
+# Java
+target
 
-.settings
-.project
-.classpath
+# Data
+*.json

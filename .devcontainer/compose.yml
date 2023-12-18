@@ -1,0 +1,15 @@
+services:
+  mailrestserver:
+    build:
+      context: .
+    volumes:
+      - ../..:/workspaces:cached
+      - ../mnt:/mnt
+    command: sleep infinity
+    networks:
+      - mailrestserver
+
+networks:
+  mailrestserver:
+    name: mailrestserver
+    external: true

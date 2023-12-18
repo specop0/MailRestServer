@@ -7,9 +7,10 @@ import spark.Response;
 
 public class Routes {
 
-    public static void EstablishRoutes(MailService mailService, int port) {
-        spark.Spark.ipAddress("localhost");
+    public static void EstablishRoutes(String ipAddress, int port, MailService mailService) {
+        spark.Spark.ipAddress(ipAddress);
         spark.Spark.port(port);
+        spark.Spark.get("/", (req, res) -> "MailRestServer is running");
         spark.Spark.post("/mail/send", "application/json", (Request rqst, Response rspns) -> {
             JSONObject jsonObject = new JSONObject(rqst.body());
             String subject = jsonObject.getString("subject");

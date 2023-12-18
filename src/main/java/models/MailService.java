@@ -13,7 +13,7 @@ import javax.mail.internet.MimeMessage;
 public class MailService {
 
     public MailService(String host, String port, String email, String username, String password) {
-        String[] parameters = new String[]{host, port, email, username, password};
+        String[] parameters = new String[] { host, port, email, username, password };
         for (String parameter : parameters) {
             if (parameter == null || "".equals(parameter)) {
                 throw new IllegalArgumentException(MailService.class.getSimpleName());

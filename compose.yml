@@ -1,0 +1,15 @@
+services:
+  mailrestserver:
+    build:
+      context: .
+    volumes:
+      - ./mnt:/mnt:ro
+    restart: always
+    user: "33:33"
+    read_only: true
+    networks:
+      - mailrestserver
+
+networks:
+  mailrestserver:
+    name: mailrestserver
