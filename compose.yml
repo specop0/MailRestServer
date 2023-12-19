@@ -9,6 +9,8 @@ services:
     read_only: true
     networks:
       - mailrestserver
+    environment:
+      - APPSETTINGS_IPADDRESS=mailrestserver
 
 networks:
   mailrestserver:

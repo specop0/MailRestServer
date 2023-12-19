@@ -1,0 +1,7 @@
+POST http://localhost:6897/mail/send
+Content-Type: application/json
+
+{
+    "subject" : "My Subject",
+    "content" : "My e-mail content."
+}

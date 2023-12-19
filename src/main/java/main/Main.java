@@ -22,9 +22,8 @@ public class Main {
         String username = mailConfiguration.getString("username");
         String password = mailConfiguration.getString("password");
 
-        JSONObject serverConfiguration = configuration.getJSONObject("server");
-        String ipAddress = serverConfiguration.getString("ipAddress");
-        int serverPort = serverConfiguration.getInt("port");
+        String ipAddress = Configuration.GetString("ipAddress", "localhost");
+        int serverPort = Configuration.GetInt("port", 6897);
 
         MailService mailService = new MailService(host, port, email, username, password);
 
