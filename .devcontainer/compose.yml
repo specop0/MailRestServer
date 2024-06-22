@@ -7,9 +7,9 @@ services:
       - ../mnt:/mnt
     command: sleep infinity
     networks:
-      - mailrestserver
+      - main
 
 networks:
-  mailrestserver:
-    name: mailrestserver
+  main:
+    name: main
     external: true

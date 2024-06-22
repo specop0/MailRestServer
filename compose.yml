@@ -8,10 +8,11 @@ services:
     user: "33:33"
     read_only: true
     networks:
-      - mailrestserver
+      - main
     environment:
       - APPSETTINGS_IPADDRESS=mailrestserver
 
 networks:
-  mailrestserver:
-    name: mailrestserver
+  main:
+    name: main
+    external: true
